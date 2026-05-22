@@ -22,9 +22,9 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
    - Eficiência do paralelismo
 
 5. **Gerar visualizações gráficas** do mapa de risco e da comparação de desempenho para facilitar a análise dos resultados.
-| Tecnologia | Versão | Finalidade |
-|------------|--------|------------|
-| **Python** | 3.13+ | Linguagem principal de desenvolvimento |
+| Tecnologia | Versão | Finalidade                                                 |
+|------------|--------|------------------------------------------------------------|
+| **Python** | 3.13+ | Linguagem principal de desenvolvimento                      |
 | **NumPy** | 1.24+ | Manipulação eficiente de matrizes e arrays multidimensionais |
 | **Matplotlib** | 3.7+ | Geração de gráficos e visualização do mapa de risco |
 | **Multiprocessing** | Biblioteca padrão | Implementação do paralelismo (Pool, map) |
