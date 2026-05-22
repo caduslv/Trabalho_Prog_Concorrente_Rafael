@@ -1,10 +1,10 @@
 # Simulador Paralelo de Risco de Inundações
 
-** Disciplina:*PROGRAMAÇÃO CONCORRENTE E DISTRIBUÍDA* 
-** Aluno(s):*Carlos Eduardo Pinheiro Da Silva - Luís Henrique Vieira Holanda*
-** Turma:*5° Semestre/ Análise e Desenvolvimento de Sistemas*
-** Professor:*Rafael Marconi Ramos*
-** Data:*15/05/2026*
+** Disciplina: PROGRAMAÇÃO CONCORRENTE E DISTRIBUÍDA  
+** Aluno(s): Carlos Eduardo Pinheiro Da Silva - Luís Henrique Vieira Holanda  
+** Turma: 5° Semestre/ Análise e Desenvolvimento de Sistemas  
+** Professor:Rafael Marconi Ramos  
+** Data: 15/05/2026
 
 # Descrição do Projeto
 Este projeto implementa um **simulador paralelo de risco de inundações** que processa grandes volumes de dados climáticos para identificar áreas com diferentes níveis de risco. Utilizando conceitos de computação paralela, o sistema compara o desempenho entre uma versão sequencial e uma versão paralela (com multiprocessing), demonstrando os ganhos de performance obtidos ao distribuir a carga de processamento entre múltiplos núcleos da CPU.
