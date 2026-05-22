@@ -51,6 +51,3 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 | 1000×1000 | 1.000.000 | Benchmark principal |
 | 2000×2000 | 4.000.000 | Teste de escalabilidade |
 | 5000×5000 | 25.000.000 | Demonstração de impacto |
-# Funcionamento do Sistema
-
-# Arquitetura do Simulador
