@@ -7,7 +7,8 @@
 ** Data:*15/05/2026*
 
 # Descrição do Projeto
-
+Este projeto implementa um **simulador paralelo de risco de inundações** que processa grandes volumes de dados climáticos para identificar áreas com diferentes níveis de risco. Utilizando conceitos de computação paralela, o sistema compara o desempenho entre uma versão sequencial e uma versão paralela (com multiprocessing), demonstrando os ganhos de performance obtidos ao distribuir a carga de processamento entre múltiplos núcleos da CPU.
+O simulador é capaz de processar grades de até **1 milhão de células** (1000×1000) em poucos segundos, gerando mapas de risco coloridos e métricas de desempenho.
 # Objetivo Geral
 Desenvolver e analisar um sistema paralelo para simulação de risco de inundações, utilizando dados climáticos sintéticos (precipitação, escoamento superficial e umidade do solo), comparando o desempenho da versão sequencial com a versão paralela e medindo o **speedup** obtido.
 # Objetivos Específicos
