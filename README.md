@@ -1,20 +1,39 @@
-# Simulador Paralelo de Risco de Inundações
+# 🌊 Simulador Paralelo de Risco de Inundações
 
-Disciplina: PROGRAMAÇÃO CONCORRENTE E DISTRIBUÍDA  
-Aluno(s): Carlos Eduardo Pinheiro Da Silva - Luís Henrique Vieira Holanda  
-Turma: 5° Semestre/ Análise e Desenvolvimento de Sistemas  
-Professor:Rafael Marconi Ramos  
-Data: 15/05/2026
+**Disciplina:** PROGRAMAÇÃO CONCORRENTE E DISTRIBUÍDA
 
-# Descrição do Projeto
+**Aluno(s):** Carlos Eduardo Pinheiro Da Silva - Luís Henrique Vieira Holanda
+
+**Turma:** 5° Semestre / Análise e Desenvolvimento de Sistemas
+
+**Professor:** Rafael Marconi Ramos
+
+**Data:** 15/05/2026
+
+---
+
+## 📝 Descrição do Projeto
+
 Este projeto implementa um **simulador paralelo de risco de inundações** que processa grandes volumes de dados climáticos para identificar áreas com diferentes níveis de risco. Utilizando conceitos de computação paralela, o sistema compara o desempenho entre uma versão sequencial e uma versão paralela (com multiprocessing), demonstrando os ganhos de performance obtidos ao distribuir a carga de processamento entre múltiplos núcleos da CPU.
-O simulador é capaz de processar grades de até **1 milhão de células** (1000×1000) em poucos segundos, gerando mapas de risco coloridos e métricas de desempenho.
-# Objetivo Geral
+
+O simulador é capaz de processar grades de até **16 milhões de células (4000×4000)** em poucos segundos, gerando mapas de risco coloridos e métricas de desempenho.
+
+---
+
+## 🎯 Objetivo Geral
+
 Desenvolver e analisar um sistema paralelo para simulação de risco de inundações, utilizando dados climáticos sintéticos (precipitação, escoamento superficial e umidade do solo), comparando o desempenho da versão sequencial com a versão paralela e medindo o **speedup** obtido.
-# Objetivos Específicos
+
+---
+
+## 📋 Objetivos Específicos
+
 1. **Implementar um modelo de risco de inundação** baseado em regras matemáticas que consideram três variáveis ambientais: precipitação, escoamento e umidade do solo.
+
 2. **Desenvolver uma versão sequencial** do simulador para servir como baseline de desempenho.
+
 3. **Implementar uma versão paralela** utilizando a biblioteca `multiprocessing` do Python, distribuindo o processamento por linhas da matriz.
+
 4. **Medir e comparar o desempenho** entre as duas versões, calculando métricas como:
    - Tempo de execução sequencial
    - Tempo de execução paralela
@@ -22,20 +41,27 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
    - Eficiência do paralelismo
 
 5. **Gerar visualizações gráficas** do mapa de risco e da comparação de desempenho para facilitar a análise dos resultados.
-| Tecnologia | Versão | Finalidade                                                 |
+
+6. **Analisar a escalabilidade** do sistema em diferentes tamanhos de grade e números de processos.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+| Tecnologia | Versão | Finalidade |
 |------------|--------|------------------------------------------------------------|
-| **Python** | 3.13+ | Linguagem principal de desenvolvimento                      |
+| **Python** | 3.13+ | Linguagem principal de desenvolvimento |
 | **NumPy** | 1.24+ | Manipulação eficiente de matrizes e arrays multidimensionais |
 | **Matplotlib** | 3.7+ | Geração de gráficos e visualização do mapa de risco |
 | **Multiprocessing** | Biblioteca padrão | Implementação do paralelismo (Pool, map) |
 | **Time** | Biblioteca padrão | Medição de tempo de execução |
 
-6. **Analisar a escalabilidade** do sistema em diferentes tamanhos de grade e números de processos.
-# Tecnologias Utilizadas
+---
 
-# Dataset
+## 📊 Dataset
 
-# Dados Sintéticos Gerados
+### Dados Sintéticos Gerados
+
 Como o projeto foca no estudo da **paralelização** e não no dado em si, utilizamos dados sintéticos gerados aleatoriamente com distribuições estatísticas realistas:
 
 | Variável | Distribuição | Parâmetros | Unidade | Descrição |
@@ -44,11 +70,19 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 | **Escoamento** | Uniforme | 0 a 300 | mm | Água que escorre pela superfície |
 | **Umidade do Solo** | Uniforme | 10 a 600 | mm | Saturação do solo |
 
-# Tamanhos Suportados
+### Tamanhos Suportados
+
 | Grade | Células | Uso |
 |-------|---------|-----|
 | 100×100 | 10.000 | Testes rápidos |
 | 500×500 | 250.000 | Desenvolvimento |
 | 1000×1000 | 1.000.000 | Benchmark principal |
 | 2000×2000 | 4.000.000 | Teste de escalabilidade |
-| 5000×5000 | 25.000.000 | Demonstração de impacto |
+| 4000×4000 | 16.000.000 | Demonstração de impacto |
+| 5000×5000 | 25.000.000 | Teste de estresse |
+
+---
+
+## ⚙️ Funcionamento do Sistema
+
+### Arquitetura do Simulador
