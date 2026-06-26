@@ -205,7 +205,7 @@ Construa um gráfico mostrando o **tempo de execução em função do número de
 
 Inserir o gráfico abaixo:
 
-![Gráfico Tempo Execução](graficos/)
+![Gráfico Tempo Execução](graficos/tempo)
 
 ---
 
@@ -221,7 +221,7 @@ Construa um gráfico mostrando o **speedup obtido**.
 
 Inserir o gráfico abaixo:
 
-![Gráfico Speedup](graficos/)
+![Gráfico Speedup](graficos/speedup)
 
 ---
 
@@ -237,7 +237,7 @@ Construa um gráfico mostrando a **eficiência da paralelização**.
 
 Inserir o gráfico abaixo:
 
-![Gráfico Eficiência](graficos/)
+![Gráfico Eficiência](graficos/eficiência)
 
 ---
 
