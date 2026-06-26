@@ -45,7 +45,8 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
 6. **Analisar a escalabilidade** do sistema em diferentes tamanhos de grade e números de processos.
 
 ---
-
+ ## Ambiente Experimental
+---
 ## 🛠️ Tecnologias Utilizadas
 
 | Tecnologia | Versão | Finalidade |
