@@ -94,7 +94,7 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 ---
 
 ## ⚙️ Funcionamento do Sistema
-
+---
 ## Metodologia de Testes
 ## Orientações
 
@@ -108,6 +108,30 @@ Para cada configuração de threads, o programa foi executado 5 vezes, com o obj
 Foi utilizada a média aritmética dos tempos obtidos nas execuções para representar o tempo final de cada configuração. Essa média foi calculada somando todos os tempos medidos e dividindo pelo número total de execuções realizadas.
 * Qual tamanho da entrada foi usado:
 A entrada do programa consiste em um arquivo de texto contendo números inteiros, no qual cada linha representa um número a ser processado. O arquivo utilizado nos testes contém 1 milhão de números, permitindo avaliar o desempenho do algoritmo em diferentes níveis de paralelismo.
+---
+### Configurações testadas
 
+Os experimentos devem ser realizados nas seguintes configurações:
 
+* 1 thread/processo (versão serial)
+* 2 threads/processos
+* 4 threads/processos
+* 8 threads/processos
+* 12 threads/processos
+
+### Procedimento experimental
+
+Descrever:
+
+* Número de execuções para cada configuração:
+Cada configuração de threads (1, 2, 4, 8 e 12) foi executada 5 vezes para reduzir possíveis variações nos resultados causadas por interferências do sistema ou outros processos em execução.
+* Forma de cálculo da média:
+Após a execução das 5 repetições para cada configuração, foi calculada a média aritmética dos tempos obtidos. A média foi utilizada como valor representativo do tempo de execução da configuração, permitindo comparações consistentes entre diferentes números de threads.
+Média=5T1​+T2​+T3​+T4​+T5​/5
+* Condições de execução (ex: máquina dedicada, carga do sistema, etc.)
+Os experimentos foram realizados em um computador com processador Intel Core i5-12500 e 16 GB de memória RAM.
+Sistema operacional utilizado: Microsoft Windows.
+Durante os testes, a máquina foi mantida com baixa carga de processamento, evitando a execução de programas pesados em paralelo, garantindo que o desempenho medido refletisse principalmente a execução do algoritmo.
+O arquivo de entrada continha 1 milhão de números inteiros, lidos e processados em blocos para otimizar a utilização das threads.
+---
 ### Arquitetura do Simulador
