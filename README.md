@@ -180,7 +180,7 @@ Onde:
 
 ---
 
-# Tabela de Resultados
+## Tabela de Resultados
 
 Preencha a tabela abaixo utilizando os tempos medidos.
 
