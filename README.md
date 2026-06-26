@@ -278,8 +278,6 @@ Esta é uma questão puramente de hardware. O seu processador Intel possui memó
 
 # 11. Conclusão
 
-Apresente as conclusões do experimento.
-
 ## Sugestões de pontos a comentar
 
 * O paralelismo trouxe ganho significativo de desempenho?
