@@ -103,11 +103,11 @@ Os experimentos foram realizados utilizando um programa desenvolvido na linguage
 * Como o tempo de execução foi medido:
 O tempo de execução foi medido utilizando a função time() da biblioteca padrão time do Python. O tempo inicial foi registrado antes do início da execução do algoritmo e o tempo final foi registrado após o término do processamento. O tempo total foi calculado pela diferença entre o tempo final e o tempo inicial.
 * Quantas execuções foram realizadas:
-Para cada configuração de threads, o programa foi executado 5 vezes, com o objetivo de reduzir variações nos resultados causadas por fatores externos do sistema.
+
 * Se foi utilizada média dos tempos:
 Foi utilizada a média aritmética dos tempos obtidos nas execuções para representar o tempo final de cada configuração. Essa média foi calculada somando todos os tempos medidos e dividindo pelo número total de execuções realizadas.
 * Qual tamanho da entrada foi usado:
-A entrada do programa consiste em um arquivo de texto contendo números inteiros, no qual cada linha representa um número a ser processado. O arquivo utilizado nos testes contém 1 milhão de números, permitindo avaliar o desempenho do algoritmo em diferentes níveis de paralelismo.
+
 ---
 ### Configurações testadas
 
@@ -132,7 +132,6 @@ Média=5T1​+T2​+T3​+T4​+T5​/5
 Os experimentos foram realizados em um computador com processador Intel Core i5-12500 e 16 GB de memória RAM.
 Sistema operacional utilizado: Microsoft Windows.
 Durante os testes, a máquina foi mantida com baixa carga de processamento, evitando a execução de programas pesados em paralelo, garantindo que o desempenho medido refletisse principalmente a execução do algoritmo.
-O arquivo de entrada continha 1 milhão de números inteiros, lidos e processados em blocos para otimizar a utilização das threads.
 ---
 # 4. Resultados Experimentais
 
@@ -145,11 +144,11 @@ Preencha a tabela com os **tempos médios de execução** obtidos.
 
 | Nº Threads/Processos | Tempo de Execução (s) |
 | -------------------- | --------------------- |
-| 1                    |1,30                   |
-| 2                    |1,28                   |
-| 4                    |1,26                   |
-| 8                    |1,24                   |
-| 12                   |1,25                   |
+| 1                    |                       |
+| 2                    |                       |
+| 4                    |                       |
+| 8                    |                       |
+| 12                   |                       |
 
 ---
 
@@ -187,11 +186,11 @@ Preencha a tabela abaixo utilizando os tempos medidos.
 
 | Threads/Processos | Tempo (s) | Speedup | Eficiência |
 | ----------------- | --------- | ------- | ---------- |
-| 1                 |1,30       |1,00     | 100%       |
-| 2                 |1,28       |1,02     |52,0%       |
-| 4                 |1,26       |1,04     |26,0%       |
-| 8                 |1,24       |1,05     |13,0%       |
-| 12                |1,25       |1,25     |0,09%       |
+| 1                 |           |         |            |
+| 2                 |           |         |            |
+| 4                 |           |         |            |
+| 8                 |           |         |            |
+| 12                |           |         |            |
 
 ---
 
@@ -245,4 +244,47 @@ Inserir o gráfico abaixo:
 # 10. Análise dos Resultados
 
 Realize uma análise crítica dos resultados obtidos.
-### Arquitetura do Simulador
+## Questões a serem respondidas
+
+* O speedup obtido foi próximo do ideal?
+
+* A aplicação apresentou escalabilidade?
+
+* Em qual ponto a eficiência começou a cair?
+
+* O número de threads ultrapassa o número de núcleos físicos da máquina?
+
+* Houve overhead de paralelização?
+
+Discutir possíveis causas para:
+
+* perda de desempenho:
+
+* gargalos no algoritmo:
+
+* sincronização entre threads/processos:
+
+* comunicação entre processos:
+
+* contenção de memória ou cache
+
+
+---
+
+# 11. Conclusão
+
+Apresente as conclusões do experimento.
+
+## Sugestões de pontos a comentar
+
+* O paralelismo trouxe ganho significativo de desempenho?
+
+* Qual foi o melhor número de threads/processos?
+
+* O programa escala bem com o aumento do paralelismo?
+
+* Quais melhorias poderiam ser feitas na implementação?
+
+Reduzir sincronização e junção de resultados, minimizando overhead.
+
+---
