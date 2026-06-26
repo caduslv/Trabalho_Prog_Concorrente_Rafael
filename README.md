@@ -253,6 +253,7 @@ Sim. A aplicação escalou positivamente, reduzindo o tempo de execução de 167
 * Em qual ponto a eficiência começou a cair?
 A eficiência se manteve excelente até 4 processos (92.1%). A queda acentuada ocorreu na transição para 8 processos, onde a eficiência despencou para 69.4%, e piorou ao atingir 12 processos (52.3%).
 * O número de threads ultrapassa o número de núcleos físicos da máquina?
+Sim. Embora 12 processos ultrapassem os 6 núcleos físicos da máquina, a otimização do código eliminou o gargalo de memória. Com isso, o Hyper-Threading atuou de forma eficaz, garantindo o speedup de 6,27x e sustentando os 52,3% de eficiência exigidos.
 
 * Houve overhead de paralelização?
 Sim. O custo de gerenciar múltiplos processos independentes no Python cresceu consideravelmente conforme o paralelismo aumentou, engolindo os ganhos de desempenho nas configurações mais altas.
@@ -266,7 +267,7 @@ Discutir possíveis causas para:
 
 * comunicação entre processos:
 
-* contenção de memória ou cache
+* contenção de memória ou cache 
 
 
 ---
