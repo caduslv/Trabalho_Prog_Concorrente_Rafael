@@ -48,12 +48,12 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
  ## Ambiente Experimental
 | Item                        | Descrição                                    |
 | --------------------------- | -------------------------------------------- |
-| Processador                 |12th Gen Intel(R) Core(TM) i5-12500   3.00 GHz|
-| Número de núcleos           |6 núcleos (cores) físicos                     |
-| Memória RAM                 |16,0 GB (utilizável: 15,7 GB)                 |
-| Sistema Operacional         |Windows 11 Pro                                |
-| Linguagem utilizada         |Python                                        |
-| Biblioteca de paralelização |concurrent.futures                            |
+| Processador                 | 12th Gen Intel(R) Core(TM) i5-12500  3.00 GHz|
+| Número de núcleos           | 6 núcleos (cores) físicos                    |
+| Memória RAM                 | 16,0 GB (utilizável: 15,7 GB)                |
+| Sistema Operacional         | Windows 11 Pro                               |
+| Linguagem utilizada         | Python                                       |
+| Biblioteca de paralelização | multiprocessing                              |
 | Compilador / Versão         | CPython/ 3.13                                |
 ---
 ## 🛠️ Tecnologias Utilizadas
