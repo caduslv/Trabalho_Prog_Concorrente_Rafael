@@ -12,7 +12,7 @@
 
 ---
 
-## 📝 Descrição do Projeto
+## 1. Descrição do Projeto
 
 Este projeto implementa um **simulador paralelo de risco de inundações** que processa grandes volumes de dados climáticos para identificar áreas com diferentes níveis de risco. Utilizando conceitos de computação paralela, o sistema compara o desempenho entre uma versão sequencial e uma versão paralela (com multiprocessing), demonstrando os ganhos de performance obtidos ao distribuir a carga de processamento entre múltiplos núcleos da CPU.
 
@@ -20,13 +20,13 @@ O simulador é capaz de processar grades de até **16 milhões de células (4000
 
 ---
 
-## 🎯 Objetivo Geral
+## 2. Objetivo Geral
 
 Desenvolver e analisar um sistema paralelo para simulação de risco de inundações, utilizando dados climáticos sintéticos (precipitação, escoamento superficial e umidade do solo), comparando o desempenho da versão sequencial com a versão paralela e medindo o **speedup** obtido.
 
 ---
 
-## 📋 Objetivos Específicos
+## 3. Objetivos Específicos
 
 1. **Implementar um modelo de risco de inundação** baseado em regras matemáticas que consideram três variáveis ambientais: precipitação, escoamento e umidade do solo.
 
@@ -45,7 +45,7 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
 6. **Analisar a escalabilidade** do sistema em diferentes tamanhos de grade e números de processos.
 
 ---
- ## Ambiente Experimental
+ ## 4. Ambiente Experimental
 | Item                        | Descrição                                    |
 | --------------------------- | -------------------------------------------- |
 | Processador                 | 12th Gen Intel(R) Core(TM) i5-12500  3.00 GHz|
@@ -56,7 +56,7 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
 | Biblioteca de paralelização | multiprocessing                              |
 | Compilador / Versão         | CPython/ 3.13                                |
 ---
-## 🛠️ Tecnologias Utilizadas
+## 5. Tecnologias Utilizadas
 
 | Tecnologia | Versão | Finalidade |
 |------------|--------|------------------------------------------------------------|
@@ -68,7 +68,7 @@ Desenvolver e analisar um sistema paralelo para simulação de risco de inundaç
 
 ---
 
-## 📊 Dataset
+## 6. Dataset
 
 ### Dados Sintéticos Gerados
 
@@ -94,7 +94,7 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 
 ---
 
-## ⚙️ Funcionamento do Sistema
+## 7. Funcionamento do Sistema
 ---
 ## Metodologia de Testes
 ## Orientações
@@ -134,7 +134,7 @@ Os experimentos foram realizados em um computador com processador Intel Core i5-
 Sistema operacional utilizado: Microsoft Windows.
 Durante os testes, a máquina foi mantida com baixa carga de processamento, evitando a execução de programas pesados em paralelo, garantindo que o desempenho medido refletisse principalmente a execução do algoritmo.
 ---
-# 4. Resultados Experimentais
+# 8. Resultados Experimentais
 
 Preencha a tabela com os **tempos médios de execução** obtidos.
 
@@ -153,7 +153,7 @@ Preencha a tabela com os **tempos médios de execução** obtidos.
 
 ---
 
-# Cálculo de Speedup e Eficiência
+## 9. Cálculo de Speedup e Eficiência
 
 ## Fórmulas Utilizadas
 
@@ -210,7 +210,7 @@ Inserir o gráfico abaixo:
 
 ---
 
-# 8. Gráfico de Speedup
+## Gráfico de Speedup
 
 Construa um gráfico mostrando o **speedup obtido**.
 
@@ -226,7 +226,7 @@ Inserir o gráfico abaixo:
 
 ---
 
-# 9. Gráfico de Eficiência
+## Gráfico de Eficiência
 
 Construa um gráfico mostrando a **eficiência da paralelização**.
 
@@ -244,7 +244,6 @@ Inserir o gráfico abaixo:
 
 # 10. Análise dos Resultados
 
-Realize uma análise crítica dos resultados obtidos.
 ## Questões a serem respondidas
 
 * O speedup obtido foi próximo do ideal?
