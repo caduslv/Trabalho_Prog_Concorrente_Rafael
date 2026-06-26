@@ -134,4 +134,115 @@ Sistema operacional utilizado: Microsoft Windows.
 Durante os testes, a máquina foi mantida com baixa carga de processamento, evitando a execução de programas pesados em paralelo, garantindo que o desempenho medido refletisse principalmente a execução do algoritmo.
 O arquivo de entrada continha 1 milhão de números inteiros, lidos e processados em blocos para otimizar a utilização das threads.
 ---
+# 4. Resultados Experimentais
+
+Preencha a tabela com os **tempos médios de execução** obtidos.
+
+## Orientações
+
+* O tempo deve ser informado em **segundos**
+* Utilizar a **média das execuções**
+
+| Nº Threads/Processos | Tempo de Execução (s) |
+| -------------------- | --------------------- |
+| 1                    |1,30                   |
+| 2                    |1,28                   |
+| 4                    |1,26                   |
+| 8                    |1,24                   |
+| 12                   |1,25                   |
+
+---
+
+# 5. Cálculo de Speedup e Eficiência
+
+## Fórmulas Utilizadas
+
+### Speedup
+
+```
+Speedup(p) = T(1) / T(p)​
+```
+
+Onde:
+
+* **T(1)** = tempo da execução serial
+* **T(p)** = tempo com p threads/processos
+
+### Eficiência
+
+```
+Eficiência(p) = Speedup(p) / p
+
+```
+
+Onde:
+
+* **p** = número de threads ou processos
+
+---
+
+# 6. Tabela de Resultados
+
+Preencha a tabela abaixo utilizando os tempos medidos.
+
+| Threads/Processos | Tempo (s) | Speedup | Eficiência |
+| ----------------- | --------- | ------- | ---------- |
+| 1                 |1,30       |1,00     | 100%       |
+| 2                 |1,28       |1,02     |52,0%       |
+| 4                 |1,26       |1,04     |26,0%       |
+| 8                 |1,24       |1,05     |13,0%       |
+| 12                |1,25       |1,25     |0,09%       |
+
+---
+
+# 7. Gráfico de Tempo de Execução
+
+Construa um gráfico mostrando o **tempo de execução em função do número de threads/processos**.
+
+## Orientações
+
+* Eixo X: número de threads/processos
+* Eixo Y: tempo de execução (segundos)
+
+Inserir o gráfico abaixo:
+
+![Gráfico Tempo Execução](graficos/)
+
+---
+
+# 8. Gráfico de Speedup
+
+Construa um gráfico mostrando o **speedup obtido**.
+
+## Orientações
+
+* Eixo X: número de threads/processos
+* Eixo Y: speedup
+* Incluir também a **linha de speedup ideal (linear)** para comparação
+
+Inserir o gráfico abaixo:
+
+![Gráfico Speedup](graficos/)
+
+---
+
+# 9. Gráfico de Eficiência
+
+Construa um gráfico mostrando a **eficiência da paralelização**.
+
+## Orientações
+
+* Eixo X: número de threads/processos
+* Eixo Y: eficiência
+* Valores entre 0 e 1
+
+Inserir o gráfico abaixo:
+
+![Gráfico Eficiência](graficos/)
+
+---
+
+# 10. Análise dos Resultados
+
+Realize uma análise crítica dos resultados obtidos.
 ### Arquitetura do Simulador
