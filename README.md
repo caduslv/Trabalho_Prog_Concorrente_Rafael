@@ -103,11 +103,11 @@ Os experimentos foram realizados utilizando um programa desenvolvido na linguage
 * Como o tempo de execução foi medido:
 O tempo de execução foi medido utilizando a função time() da biblioteca padrão time do Python. O tempo inicial foi registrado antes do início da execução do algoritmo e o tempo final foi registrado após o término do processamento. O tempo total foi calculado pela diferença entre o tempo final e o tempo inicial.
 * Quantas execuções foram realizadas:
-
+O experimento executou uma bateria sequencial de testes, rodando o algoritmo com 1, 2, 4, 8 e 12 processos para a mesma carga de dados.
 * Se foi utilizada média dos tempos:
 Foi utilizada a média aritmética dos tempos obtidos nas execuções para representar o tempo final de cada configuração. Essa média foi calculada somando todos os tempos medidos e dividindo pelo número total de execuções realizadas.
 * Qual tamanho da entrada foi usado:
-
+Qual tamanho da entrada foi usado: A entrada utilizada foi uma grade de 10.000 x 10.000, resultando em 100 milhões de células. Essa estrutura gerou um consumo de memória estimado em ~1144 MB (cerca de 1.1 GB).
 ---
 ### Configurações testadas
 
@@ -144,15 +144,15 @@ Preencha a tabela com os **tempos médios de execução** obtidos.
 
 | Nº Threads/Processos | Tempo de Execução (s) |
 | -------------------- | --------------------- |
-| 1                    |                       |
-| 2                    |                       |
-| 4                    |                       |
-| 8                    |                       |
-| 12                   |                       |
+| 1                    |  167,12               |
+| 2                    |  85,49                |
+| 4                    |  45,37                |
+| 8                    |  30,09                |
+| 12                   |  26,63                |
 
 ---
 
-# 5. Cálculo de Speedup e Eficiência
+# Cálculo de Speedup e Eficiência
 
 ## Fórmulas Utilizadas
 
@@ -180,21 +180,21 @@ Onde:
 
 ---
 
-# 6. Tabela de Resultados
+# Tabela de Resultados
 
 Preencha a tabela abaixo utilizando os tempos medidos.
 
 | Threads/Processos | Tempo (s) | Speedup | Eficiência |
 | ----------------- | --------- | ------- | ---------- |
-| 1                 |           |         |            |
-| 2                 |           |         |            |
-| 4                 |           |         |            |
-| 8                 |           |         |            |
-| 12                |           |         |            |
+| 1                 | 167,12    | 1,00    | 100,0 %    |
+| 2                 | 85,49     | 1,95    | 97,7 %     |
+| 4                 | 45,37     | 3,68    | 92,1 %     |
+| 8                 | 30,09     | 5,55    | 69,4 %     |
+| 12                | 26,63     | 6,27    | 52,3 %     |
 
 ---
 
-# 7. Gráfico de Tempo de Execução
+# Gráfico de Tempo de Execução
 
 Construa um gráfico mostrando o **tempo de execução em função do número de threads/processos**.
 
@@ -247,15 +247,15 @@ Realize uma análise crítica dos resultados obtidos.
 ## Questões a serem respondidas
 
 * O speedup obtido foi próximo do ideal?
-
+Foi próximo do ideal apenas nas configurações iniciais. Com 2 processos (1.95x) e 4 processos (3.68x), o speedup acompanhou o aumento de hardware. Contudo, ao utilizar 8 processos (5.55x) e 12 processos (6.27x), o speedup real se distanciou drasticamente do speedup linear ideal (que seria 8x e 12x, respectivamente).
 * A aplicação apresentou escalabilidade?
-
+Sim. A aplicação escalou positivamente, reduzindo o tempo de execução de 167.12 segundos na execução sequencial para 26.63 segundos com 12 processos. No entanto, é uma escalabilidade sublinear, apresentando fortes retornos decrescentes nas últimas configurações.
 * Em qual ponto a eficiência começou a cair?
-
+A eficiência se manteve excelente até 4 processos (92.1%). A queda acentuada ocorreu na transição para 8 processos, onde a eficiência despencou para 69.4%, e piorou ao atingir 12 processos (52.3%).
 * O número de threads ultrapassa o número de núcleos físicos da máquina?
 
 * Houve overhead de paralelização?
-
+Sim. O custo de gerenciar múltiplos processos independentes no Python cresceu consideravelmente conforme o paralelismo aumentou, engolindo os ganhos de desempenho nas configurações mais altas.
 Discutir possíveis causas para:
 
 * perda de desempenho:
@@ -278,13 +278,13 @@ Apresente as conclusões do experimento.
 ## Sugestões de pontos a comentar
 
 * O paralelismo trouxe ganho significativo de desempenho?
-
+O uso do paralelismo trouxe um ganho significativo e indispensável de desempenho para a aplicação. O processamento da simulação caiu de quase 3 minutos (167.12s) para menos de 30 segundos, provando a viabilidade da abordagem concorrente para grandes volumes de dados.
 * Qual foi o melhor número de threads/processos?
-
+O melhor cenário de custo-benefício foi a configuração com 4 processos. Nela, o programa reduziu o tempo para 45.37 segundos, mantendo um aproveitamento de hardware quase ideal (92.1% de eficiência). 
 * O programa escala bem com o aumento do paralelismo?
-
+O programa escala de forma muito saudável até este ponto. Adicionar mais do que 4 processos resultou em tempos absolutos menores, mas com alto desperdício de recursos computacionais devido à contenção.
 * Quais melhorias poderiam ser feitas na implementação?
-
+Para implementações futuras, melhorias poderiam focar em reduzir o custo de comunicação entre os processos. Minimizar a quantidade de dados que precisam ser transferidos via IPC para o processo principal e otimizar a junção dos resultados reduziria consideravelmente o overhead. Além disso, utilizar abordagens focadas em localidade de cache garantiria que a contenção de memória fosse amenizada nas configurações com mais processos.
 Reduzir sincronização e junção de resultados, minimizando overhead.
 
 ---
