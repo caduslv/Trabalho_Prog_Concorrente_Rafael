@@ -293,3 +293,16 @@ Para implementações futuras, melhorias poderiam focar em reduzir o custo de co
 Reduzir sincronização e junção de resultados, minimizando overhead.
 
 ---
+# 12. Referências
+
+https://zenodo-rdm.web.cern.ch/records/10943896
+1. NASA (Global Flood Hazard Frequency and Distribution)
+O que é: Este dataset fornece o mapeamento histórico e geoespacial da frequência e distribuição de ameaças de inundação ao redor do mundo.
+
+No seu simulador: Ele é a "fonte da verdade" para a sua grade de células. Significa que o seu programa processa (ou simula com base em) dados geográficos reais de satélites e modelos climáticos, elevando o projeto de um simples exercício de lógica para um caso real de Big Data científico.
+
+https://data.nasa.gov/dataset/global-flood-hazard-frequency-and-distribution
+2. Impacto na Arquitetura do Sistema
+Como os dados dessas instituições (NASA e Zenodo) costumam ser distribuídos em formatos de matrizes geoespaciais e científicas — como GeoTIFF, NetCDF ou HDF5 —, a otimização que fizemos usando Python + NumPy se encaixa como uma luva.
+
+Esses arquivos são lidos nativamente como grandes arrays multidimensionais. Isso justifica perfeitamente a divisão da matriz em grandes blocos independentes para que os 12 processos dividam a carga e calculem o risco de inundação com a máxima eficiência, sem gargalos de leitura.
