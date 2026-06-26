@@ -95,4 +95,19 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 
 ## ⚙️ Funcionamento do Sistema
 
+## Metodologia de Testes
+## Orientações
+
+Descrever:
+Os experimentos foram realizados utilizando um programa desenvolvido na linguagem Python, executado no interpretador CPython, no ambiente de desenvolvimento Visual Studio Code. O objetivo dos testes foi analisar o desempenho da execução paralela na soma de números inteiros armazenados em um arquivo.
+* Como o tempo de execução foi medido:
+O tempo de execução foi medido utilizando a função time() da biblioteca padrão time do Python. O tempo inicial foi registrado antes do início da execução do algoritmo e o tempo final foi registrado após o término do processamento. O tempo total foi calculado pela diferença entre o tempo final e o tempo inicial.
+* Quantas execuções foram realizadas:
+Para cada configuração de threads, o programa foi executado 5 vezes, com o objetivo de reduzir variações nos resultados causadas por fatores externos do sistema.
+* Se foi utilizada média dos tempos:
+Foi utilizada a média aritmética dos tempos obtidos nas execuções para representar o tempo final de cada configuração. Essa média foi calculada somando todos os tempos medidos e dividindo pelo número total de execuções realizadas.
+* Qual tamanho da entrada foi usado:
+A entrada do programa consiste em um arquivo de texto contendo números inteiros, no qual cada linha representa um número a ser processado. O arquivo utilizado nos testes contém 1 milhão de números, permitindo avaliar o desempenho do algoritmo em diferentes níveis de paralelismo.
+
+
 ### Arquitetura do Simulador
