@@ -260,15 +260,19 @@ Sim. O custo de gerenciar múltiplos processos independentes no Python cresceu c
 Discutir possíveis causas para:
 
 * perda de desempenho:
+A perda de desempenho nas configurações mais altas (8 e 12 processos) ocorreu principalmente por causa do Context Switching (Troca de Contexto). Como sua máquina possui apenas 6 núcleos físicos, ao pedir 12 processos de cálculo intenso, o sistema operacional foi forçado a pausar um processo, salvar seu estado, carregar outro e executá-lo repetidas vezes nos mesmos núcleos. Esse "tira e põe" na CPU gasta um tempo precioso que deveria estar sendo usado para fazer os cálculos da simulação, resultando em lentidão.
 
 * gargalos no algoritmo:
+O maior gargalo estrutural do seu algoritmo original era a granularidade muito fina. O código estava dividindo o problema em 10.000 tarefas minúsculas (processando uma linha da matriz por vez). Para o Python, preparar e gerenciar 10.000 pacotes de trabalho é altamente ineficiente. O esforço burocrático de delegar a tarefa acabou se tornando muito mais pesado do que a execução matemática da tarefa em si.
 
 * sincronização entre threads/processos:
+Mesmo que os processos rodem em paralelo, existe um momento de sincronização obrigatória no final: a função de pool precisa esperar todos terminarem para remontar a matriz final na ordem correta. Quando o sistema está sobrecarregado (com mais processos do que núcleos), alguns processos inevitably terminam muito antes dos outros. O processo principal fica travado e ocioso esperando os trabalhadores mais lentos concluírem suas partes para poder avançar, nivelando o desempenho geral por baixo.
 
 * comunicação entre processos:
+No Python, processos diferentes não enxergam a memória um do outro. Para enviar a linha de precipitação, escoamento e umidade para o trabalhador — e depois receber a linha de resultado de volta —, o Python precisa serializar (transformar os dados em bytes usando uma ferramenta chamada pickle), transmitir por canais de comunicação do sistema (Pipes) e desserializar do outro lado. Fazer esse tráfego de dados massivo milhares de vezes cria um trânsito absurdo na comunicação interna do computador, derrubando a eficiência.
 
 * contenção de memória ou cache 
-
+Esta é uma questão puramente de hardware. O seu processador Intel possui memórias internas ultrarrápidas (Caches L1, L2 e L3). Quando você coloca 12 processos pesados "brigando" para ler e gravar dados em matrizes que ocupam mais de 1 GB de RAM, eles inundam o barramento de memória. Pior do que isso: um processo acaba expulsando os dados do outro de dentro do Cache L3 compartilhado. Quando o processador precisa do dado e ele não está mais no Cache (situação chamada de Cache Miss), ele é obrigado a buscar a informação lá na memória RAM, o que é dezenas de vezes mais demorado, gerando um enorme gargalo físico.
 
 ---
 
