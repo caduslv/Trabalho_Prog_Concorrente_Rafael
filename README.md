@@ -302,6 +302,7 @@ O que é: Este dataset fornece o mapeamento histórico e geoespacial da frequên
 No seu simulador: Ele é a "fonte da verdade" para a sua grade de células. Significa que o seu programa processa (ou simula com base em) dados geográficos reais de satélites e modelos climáticos, elevando o projeto de um simples exercício de lógica para um caso real de Big Data científico.
 
 https://data.nasa.gov/dataset/global-flood-hazard-frequency-and-distribution
+
 2. Impacto na Arquitetura do Sistema
 Como os dados dessas instituições (NASA e Zenodo) costumam ser distribuídos em formatos de matrizes geoespaciais e científicas — como GeoTIFF, NetCDF ou HDF5 —, a otimização que fizemos usando Python + NumPy se encaixa como uma luva.
 
