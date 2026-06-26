@@ -90,6 +90,7 @@ Como o projeto foca no estudo da **paralelização** e não no dado em si, utili
 | 2000×2000 | 4.000.000 | Teste de escalabilidade |
 | 4000×4000 | 16.000.000 | Demonstração de impacto |
 | 5000×5000 | 25.000.000 | Teste de estresse |
+| 10000×10000 | 100.000.000 | Experimento principal (Carga máxima) |
 
 ---
 
